@@ -1,0 +1,9 @@
+streamlit>=1.31
+yfinance>=0.2.40
+pandas>=2.2
+numpy>=1.26
+requests>=2.31
+requests-cache>=1.2
+beautifulsoup4>=4.12
+requests-html==0.10.0
+pyppeteer==1.0.2
