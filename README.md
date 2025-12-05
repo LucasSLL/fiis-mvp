@@ -48,8 +48,9 @@ Linguagem e principais bibliotecas utilizadas:
 - **pymongo** – acesso ao MongoDB Atlas (lista com todos os FIIs armazenada no banco de dados)
 - **python-dotenv** – leitura de variáveis de ambiente
 
-As versões mínimas estão em `requirements.txt`.  
-Instalação:
+As versões mínimas estão em `requirements.txt`.
+Para executar no windows, basta baixar a pasta "Projeto - Executar" e clicar no .bat
+Para executar no Linux, basta baixar a pasta "Projeto - Executar" e executar os seguintes comandos:
 
 ```bash
 pip install -r requirements.txt
