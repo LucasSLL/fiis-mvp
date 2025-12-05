@@ -53,8 +53,8 @@ As versões mínimas estão em `requirements.txt`.
 ### Como executar no Windows
 
 1. Baixe a pasta **`Projeto - Executar`**.
-2. Extraia em algum diretório (por exemplo, Documentos).
-3. Dê dois cliques em `Executar.bat`.
+2. Extraia o conteúdo (pasta `Projeto/`).
+3. Dentro da pasta extraída, dê dois cliques em `Executar.bat`.
 
 O script vai criar/usar um ambiente virtual dentro da pasta, instalar as
 dependências e abrir o app Streamlit no navegador.
