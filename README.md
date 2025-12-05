@@ -49,9 +49,21 @@ Linguagem e principais bibliotecas utilizadas:
 - **python-dotenv** – leitura de variáveis de ambiente
 
 As versões mínimas estão em `requirements.txt`.
-Para executar no windows, basta baixar a pasta "Projeto - Executar" e clicar no .bat
-Para executar no Linux, basta baixar a pasta "Projeto - Executar" e executar os seguintes comandos:
+
+### Como executar no Windows
+
+1. Baixe a pasta **`Projeto - Executar`**.
+2. Extraia em algum diretório (por exemplo, Documentos).
+3. Dê dois cliques em `Executar.bat`.
+
+O script vai criar/usar um ambiente virtual dentro da pasta, instalar as
+dependências e abrir o app Streamlit no navegador.
+
+### Como executar no Linux / macOS
+
+Baixe a pasta **`Projeto - Executar`**, abra um terminal nela e execute:
 
 ```bash
 pip install -r requirements.txt
 streamlit run Script/core/app.py
+
