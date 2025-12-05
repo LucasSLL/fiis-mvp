@@ -53,3 +53,6 @@ Instalação:
 
 ```bash
 pip install -r requirements.txt
+
+```bash
+streamlit run Script/core/app.py
