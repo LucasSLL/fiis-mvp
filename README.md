@@ -45,7 +45,7 @@ Linguagem e principais bibliotecas utilizadas:
 - **yfinance** – preços, volume e dividendos via Yahoo Finance
 - **requests / requests-cache** – chamadas HTTP com cache
 - **beautifulsoup4 / requests-html / pyppeteer** – scraping de páginas
-- **pymongo** – acesso ao MongoDB Atlas (opcional, para lista de FIIs)
+- **pymongo** – acesso ao MongoDB Atlas (lista com todos os FIIs armazenada no banco de dados)
 - **python-dotenv** – leitura de variáveis de ambiente
 
 As versões mínimas estão em `requirements.txt`.  
