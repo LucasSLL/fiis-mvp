@@ -1,29 +1,55 @@
-# FIIs – MVP (Investidor10 + yfinance)
+# FIIs – Ranking & Busca 📊
 
-Projeto educacional que monta um **ranking de FIIs** e permite **pesquisar um ativo** para ver métricas de risco e desempenho.
+Aplicação web em **Streamlit** para análise educacional de Fundos de Investimento Imobiliário (FIIs).
 
-> **Aviso**: não é recomendação de investimento.
+> ⚠️ Projeto acadêmico / educacional.  
+> Não constitui recomendação de investimento.
 
-## Funcionalidades
-- Ranking com seed de FIIs (ordenável por `risk_score`, retorno, volatilidade, etc.)
-- Busca por FII (ex.: KNCR11) com métricas individuais
-- **Risco (0–100)**: combinação de volatilidade 252d e drawdown máximo em 2 anos
-- Dados de **preço** e **dividendos** via Yahoo Finance (`yfinance`)
-- (Quando disponível) *indicadores fundamentais* do site Investidor10
+---
 
-## Stack
-- Python 3.11
-- Streamlit, pandas, numpy, yfinance
-- requests, requests-cache, beautifulsoup4
+## ✨ Funcionalidades
 
-## Como rodar localmente
+- **Ranking inicial de FIIs** com:
+  - Índice de risco (0–100)
+  - Retorno 12m (preço + dividendos)
+  - Volatilidade anual
+  - Máx. drawdown (2 anos)
+  - P/VP, segmento, etc.
+- **Análise detalhada de um FII**:
+  - Cards com principais métricas
+  - Gráficos:
+    - Preço (R$) – últimos 24 meses
+    - Preço normalizado
+    - Drawdown
+    - Dividendos mensais (Yahoo)
+  - Alternância entre:
+    - Modo compacto (gráficos em abas)
+    - Modo com todos os gráficos empilhados
+- **Módulo “Minha carteira”**:
+  - Seleção de FIIs que compõem a carteira
+  - Cálculo de:
+    - Quantidade de FIIs
+    - Risco médio
+    - Retorno médio 12m
+  - Tabela apenas com os ativos selecionados
+
+---
+
+## 🧰 Tecnologias & Dependências
+
+Linguagem e principais bibliotecas utilizadas:
+
+- **Python 3.11+**
+- **Streamlit** – interface web
+- **pandas / numpy** – manipulação de dados
+- **yfinance** – preços, volume e dividendos via Yahoo Finance
+- **requests / requests-cache** – chamadas HTTP com cache
+- **beautifulsoup4 / requests-html / pyppeteer** – scraping de páginas
+- **pymongo** – acesso ao MongoDB Atlas (opcional, para lista de FIIs)
+- **python-dotenv** – leitura de variáveis de ambiente
+
+As versões mínimas estão em `requirements.txt`.  
+Instalação:
+
 ```bash
-# Recomendado: criar ambiente
-conda create -n fiis-mvp python=3.11 -y
-conda activate fiis-mvp
-
-# Instalar dependências
 pip install -r requirements.txt
-
-# Executar a aplicação
-streamlit run app.py
