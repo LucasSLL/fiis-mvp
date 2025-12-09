@@ -9,7 +9,7 @@ def apply_global_style():
         """
         <style>
             .stApp {
-                background-color: #f5f5f7;
+                background-color: transparent;
             }
 
             h1 {
@@ -37,7 +37,7 @@ def apply_global_style():
                 border-radius: 999px;
                 padding: 0.3rem 0.9rem;
                 font-weight: 500;
-                font-size: 0.9rem;
+                font-size: 3rem;
             }
 
             button[data-baseweb="tab"][aria-selected="true"] {
