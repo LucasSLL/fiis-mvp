@@ -65,10 +65,27 @@ with col_left:
     view = ranking.sort_values(order_col, ascending=ascending)[DEFAULT_VIEW]
     view_display = view.rename(columns=DISPLAY)
 
+    def color_value(val):
+        if val == 'Alto':
+            color = 'red'
+        elif val == 'Baixo':
+            color = 'green'
+        elif val == 'Médio':
+            color = 'yellow'
+        else:
+            color = 'white'
+            
+        return f'color: {color}'
+
+    styled_df =  view_display.style.format(
+                    {DISPLAY[k]: v for k, v in FORMAT.items() if k in view.columns}
+                ).applymap(
+                    color_value,
+                    subset=['Risco']
+                )
+
     st.dataframe(
-        view_display.style.format(
-            {DISPLAY[k]: v for k, v in FORMAT.items() if k in view.columns}
-        ),
+        styled_df,
         use_container_width=True,
         hide_index=True,
         height=1950,
