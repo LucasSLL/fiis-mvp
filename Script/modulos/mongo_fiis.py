@@ -5,7 +5,7 @@ import os
 # coloque sua URI real aqui OU use variável de ambiente MONGODB_URI
 MONGODB_URI = os.environ.get(
     "MONGODB_URI",
-    "mongodb+srv://lucas_db_user:IcuGdRaUD95lmAhv@fiis-cluster.4dn3wzl.mongodb.net/?appName=fiis-cluster"
+    "mongodb+srv://lucas_db_user:z4lVSHw8xBUgiP0g@fiis-cluster.4dn3wzl.mongodb.net/?appName=fiis-cluster"
 )
 
 client = MongoClient(MONGODB_URI)

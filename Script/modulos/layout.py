@@ -9,7 +9,7 @@ def apply_global_style():
         """
         <style>
             .stApp {
-                background-color: #f5f5f7;
+                background-color: transparent;
             }
 
             h1 {
@@ -54,7 +54,7 @@ def apply_global_style():
 
             /* Metrics como cartão */
             div[data-testid="stMetric"] {
-                background-color: #ffffff;
+                /*background-color: #ffffff;*/                    -- excluir futuramente
                 padding: 0.75rem 1rem;
                 border-radius: 0.75rem;
                 box-shadow: 0 1px 3px rgba(15, 23, 42, 0.12);
@@ -62,7 +62,7 @@ def apply_global_style():
             }
             div[data-testid="stMetric"] label {
                 font-size: 0.8rem;
-                color: #6b7280;
+                /*color: #6b7280;*/                                 -- excluir futuramente
             }
             div[data-testid="stMetricValue"] {
                 font-size: 1.3rem;

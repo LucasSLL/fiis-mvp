@@ -49,14 +49,6 @@ col_left, col_right = st.columns([1.0, 1.1])
 with col_left:
     st.subheader("Ranking (seed de FIIs)")
 
-    #label_to_canon = {DISPLAY[k]: k for k in DISPLAY}
-    #order_col_label = st.selectbox(
-    #    "Ordenar por",
-    #    [DISPLAY[c] for c in ORDER_CHOICES],
-    #    index=0,
-    #)
-    #order_col = label_to_canon[order_col_label]
-
     order_col = ORDER_CHOICES[0] 
 
     # P/VP menor “melhor”; DD mais negativo → crescente
@@ -65,13 +57,41 @@ with col_left:
     view = ranking.sort_values(order_col, ascending=ascending)[DEFAULT_VIEW]
     view_display = view.rename(columns=DISPLAY)
 
+    def colorir_risco(val):
+        if val == 'Alto':
+            color = 'red'
+        elif val == 'Médio':
+            color = 'yellow'
+        elif val == 'Baixo':
+            color = 'green'
+        else:
+            color = ''
+        return f'color: {color}'
+    
+    styled_view = view_display.style.format(
+        {DISPLAY[k]: v for k, v in FORMAT.items() if k in view.columns}
+    )
+    
+    styled_view_risco = styled_view.applymap(
+        colorir_risco, 
+        subset=[DISPLAY["class_risco"]] 
+    )
+
     st.dataframe(
-        view_display.style.format(
-            {DISPLAY[k]: v for k, v in FORMAT.items() if k in view.columns}
-        ),
+        styled_view_risco,
         use_container_width=True,
         hide_index=True,
         height=1950,
+        column_config={
+            DISPLAY["class_risco"]: st.column_config.TextColumn(
+                DISPLAY["class_risco"], 
+                help="Baixo → índice ≤ 35   |   Médio → 35 < índice ≤ 65   |   Alto → índice > 65",        
+            ),
+            DISPLAY["indice_risco"]: st.column_config.TextColumn(
+                DISPLAY["indice_risco"], 
+                help="Índice de Risco = (0,6⋅vol_pct+0,4⋅dd_pct)×100",  
+            )
+        },
     )
 
 # ---------- COLUNA DIREITA: BUSCA + DETALHES ----------
