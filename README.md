@@ -52,9 +52,10 @@ As versões mínimas estão em `requirements.txt`.
 
 ### Como executar no Windows
 
-1. Baixe a pasta **`Projeto`**.
-2. Extraia o conteúdo (pasta `Projeto`).
-3. Dentro da pasta extraída, dê dois cliques em `Executar.bat`.
+1. Necessário **Python 3.11+** instalado na máquina.
+2. Baixe a pasta **`Projeto`**.
+3. Extraia o conteúdo (pasta `Projeto`).
+4. Dentro da pasta extraída, dê dois cliques em `Executar.bat`.
 
 O script vai criar/usar um ambiente virtual dentro da pasta, instalar as
 dependências e abrir o app Streamlit no navegador.
